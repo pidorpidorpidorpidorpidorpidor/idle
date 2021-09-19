@@ -1,0 +1,10 @@
+lst = ['а','б','в']
+f = open('text.txt', 'w')
+for i in lst:
+    f.write(i)
+
+f.close()
+f = open('text.txt', 'r')
+g = f.readline()
+print(g)
+f.close()
