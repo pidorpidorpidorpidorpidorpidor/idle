@@ -1,0 +1,19 @@
+
+def initbd(fln):
+    f = open(fln, 'w')
+    f.write('1 ярослав 11 игра\n2 богдан 13 китайский\n3 виолетта 13 тхэквондо\n')
+    f.close()
+
+def add(fln):
+    name = input('введите имя: ')
+    age = input('введите возраст: ')
+    com = input('введите комментарий: ')
+    f = open(fln, 'w')
+    f.write(name + str(age) + com)
+    
+def count(fln):
+    f = open(fln, 'r')
+    sp = f.readlines()
+    return len(sp)
+
+initbd('das.txt')
