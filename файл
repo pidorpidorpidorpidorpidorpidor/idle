@@ -1,14 +1,23 @@
-
 def initbd(fln):
     f = open(fln, 'w')
     f.write('1 ярослав 11 игра\n2 богдан 13 китайский\n3 виолетта 13 тхэквондо\n')
     f.close()
-
+    
+def search(fln, num):
+    f = open(fln, 'r')
+    sp = f.readlines()
+    print(sp)
+    sp1 == sp.splitlines( )
+    print(sp1)
+    for i in sp1:
+        d = i.split(' ')
+        print(d[0])
+    
 def add(fln):
     name = input('введите имя: ')
     age = input('введите возраст: ')
     com = input('введите комментарий: ')
-    f = open(fln, 'w')
+    f = open(fln, 'a')
     f.write(name + str(age) + com)
     
 def count(fln):
@@ -16,4 +25,14 @@ def count(fln):
     sp = f.readlines()
     return len(sp)
 
+#lst = '1 ярослав 11 игра\n2 богдан 13 китайский\n3 виолетта 13 тхэквондо\n'
+#p = lst.splitlines()
+#print(p)
+#for i in p:
+#    print(i)
+#for i in p:
+#    d = i.split(' ')
+#    print(d[0])
+
 initbd('das.txt')
+#C:\Program Files\python39
