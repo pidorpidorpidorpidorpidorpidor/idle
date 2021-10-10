@@ -1,0 +1,16 @@
+x = 1
+while x == 1:
+    money = input('Введите сколько у вас денег?:')
+    if int(money) == 0:
+        print('вам тут не рады!')
+    elif int(money) > 0 and int(money) <= 1000:
+        print('у вас очень мало средств')
+    elif int(money) > 1000 and int(money) <= 10000:
+        print('вы можете купить флешку')
+    elif int(money) > 1000:
+        print('вы можете купить 3 флешки!')
+    elif int(money) < 0:
+        print('верни долг!')
+    else:
+        print('введены не верные данные!')
+input()
