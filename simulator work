@@ -1,0 +1,168 @@
+import time
+import random
+
+print('Добро пожаловать в симулятор')
+print('Чтобы открыть список команд, напишите comands()')
+wrk = 0
+money = 0
+bmoney = 0
+workTime = 0
+achivementD = 0
+achivementFW = 0
+achivementC = 0
+achivementL = 0
+def comands():
+    print('Список команд:')
+    print('work() - работа')
+    print('workc() - посмотреть где вы работаете')
+    print('workE() - устроиться на работу')
+    print('cmoney() -посчитать монеты')
+    print('casino() - сыграть в казино')
+def work():
+    global wrk,workTime,money,achivementD,bmoney,achivementFW
+    if wrk == 0:
+        print('У вас нет работы! Чтобы устроиться, напишите workE()')
+    elif wrk != 0 and wrk > 0:
+        if workTime == 0:
+            print('вы начали работать')
+            workTime = 10
+            while workTime > 0:
+                workTime = workTime - 1
+                print(workTime)
+                time.sleep(1)
+            if wrk == 2:
+                x = random.randint(0,3)
+                if x == 1:
+                    print('вы разбились!')
+                    money = 0
+                    wrk = 0
+                    if achivementD == 0:
+                        achivementD = 1
+                else:
+                    print('Вы заработали 20000')
+                    money = money + 20000
+                    if achivementFW == 0:
+                        achivementFW = 1
+            if wrk == 1:
+                x = random.randint(0,5)
+                if x == 1:
+                    print('Вас отрубило трубой!')
+                    money = 0
+                    wrk = 0
+                    if achivementD == 0:
+                        achivementD = 1  
+                else:
+                    print('Вы заработали 10000')
+                    money = money + 10000
+                    if achivementFW == 0:
+                        achivementFW = 1
+            if wrk == 3:
+                x = random.randint(0,5)
+                if x == 1:
+                    print('Вас сбил водитель маршрутки!')
+                    money = 0
+                    wrk = 0
+                    if achivementD == 0:
+                        achivementD = 1  
+                else:
+                    print('Вы заработали 10000')
+                    money = money + 10000
+                    if achivementFW == 0:
+                        achivementFW = 1
+        else:
+            print('Вы сможете работать, через - ' + str(sorkTime))
+    else:
+        print('У вас нет работы! Чтобы устроиться, напишите workE()')
+    if achivementD == 1:
+        print('Вы получили достижение:"Смерть - не преграда!"')
+        achivementD = 2
+    if achivementFW == 1:
+        print('Вы получили достижение:"Первые деньги!"')
+        achivementFW = 2 
+def workE():
+    global wrk
+    print('список работ:')
+    print('1.сантехник - зарплата 10000')
+    print('2.водитель - зарплата 20000')
+    print('3.доставщик - зарплата 10000')
+    wrk = int(input('Напишите номер работы, на которую хотите устроиться:'))
+    if wrk == 1:
+        print('вы строились на работу "сантехник"')
+    if wrk == 2:
+        print('вы строились на работу "водитель"')
+    if wrk == 3:
+        print('вы строились на работу "доcтавщик"')
+def cmoney():
+    global money
+    print(money)
+def workc():
+    print(wrk)
+def bank():
+    global bmoney,money
+    print('Ваши деньги в банке:' + str(bmoney))
+    bankLevel = int(input('1 положить деньги, 2 - снять, 3 - уйти:'))
+    if bankLevel == 1:
+        bmon = int(input('Выбирите сумму:'))
+        if bmon > money:
+            print('Недостаточно средств!')
+            bankLevel = 0
+        elif bmon <= money:
+            print('вы положили деньги в банк!')
+            bmoney = bmoney + bmon
+            bankLevel = 0
+    elif bankLevel == 2:
+        bmon = int(input('Выбирите сумму:'))
+        if bmon == 0:
+            print('У вас нет денег!')
+        elif bmon > 0:
+            print('Денег:' + str(bmoney))
+            if bmon <= bmoney:
+                bmoney = bmoney - bmon
+                print('Вы сняли:' + str(bmon))
+            else:
+                print('Введены не верные данные!')
+def casino():
+    global money,achivementC,achivementL
+    print('Вы пришли в казино!')
+    pay = int(input('Задайте ставку:'))
+    if pay > money:
+        print('Недостаточно средств!')
+    elif pay < money:
+        pp = int(input('На что ставим? 1-крассное,2-черное,3-зеленое:'))
+    result = random.randint(0,100)
+    if result > 5 and result < 10:
+        if pp == 1:
+            print('Вы выйграли:' + str(pay))
+            if achivementC == 0:
+                achivementC = 1
+        else:
+            print('Вы проиграли!')
+            money = money - pay
+            if achivementL == 0:
+                achivementL = 1
+    elif result > 0 and result < 5:
+        if pp == 2:
+            print('Вы выйграли:' + str(pay))
+            if achivementC == 0:
+                achivementC = 1
+        else:
+            print('Вы проиграли!')
+            money = money - pay
+            if achivementL == 0:
+                achivementL = 1
+    if result == 10:
+        if pp == 3:
+            print('Вы выйграли:' + str(pay * 2))
+            if achivementC == 0:
+                achivementC = 1
+        else:
+            print('Вы проиграли!')
+            money = money - pay
+            if achivementL == 0:
+                achivementL = 1
+    elif achivementC == 1:
+        print('Вы получили достижение:"Первый выйгрыш!"')
+        achivementC = 2
+    if achivementL == 1:
+        print('Вы получили достижение:"Первая неудача!"')
+        achivementL = 2   
