@@ -1,0 +1,39 @@
+lst = []
+def add():
+    global lst
+    lst.append(input('Выберете дейсвтие:'))
+    print('Действие добавлено!')
+#добавить
+    
+def delete():
+    global lst
+    lst.pop(int(input('Выберете действие:')))
+    print('Действие удалено!')
+#удалить
+    
+def lstPrint():
+    global lst
+    print(lst)
+#показать весь список
+    
+def lstNum():
+    global lst
+    s = int(input('Выберете действие:'))
+    print(lst[s])
+#показать элемент
+
+def rewrite():
+    m = int(input('Выберете действие:'))
+    print(lst[m])
+    lst[m] = input('Введите действие:')
+    print('Изменения добавлены!')
+#редактировать элемент
+
+def rewriteName():
+    m = input('Выберете действие для редактирования:')
+    for i in range(len(lst)):
+        if lst[i] == m:
+            m = input('Введите новое действие:')
+            lst[i] = m
+        else:
+            print('Выбраного действие не существует!')
