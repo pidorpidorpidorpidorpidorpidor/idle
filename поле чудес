@@ -1,0 +1,20 @@
+lst = ['в', 'о', 'д', 'а']
+lst1 = ['*', '*', '*', '*']
+
+while True:
+    p1 = input('участник #1 выберите букву:')
+    for i in range(len(lst)):
+        if p1 == lst[i]:
+            lst1[i] = p1
+    if lst1[0] != '*' and lst1[1] != '*' and lst1[2] != '*' and lst1[3] != '*' :
+        print("Участник 1 выйграл!")
+        break
+    print(lst1)
+    p2 = input('участник #2 выберите букву:')
+    for i in range(len(lst)):
+        if p2 == lst[i]:
+            lst1[i] = p2
+    if lst1[0] != '*' and lst1[1] != '*' and lst1[2] != '*' and lst1[3] != '*' :
+        print("Участник 2 выйграл!")
+        break
+    print(lst1)
