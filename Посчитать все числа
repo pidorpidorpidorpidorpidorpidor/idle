@@ -1,0 +1,13 @@
+lst = []
+while True:
+    x = input('Введите любое число(D - для отмены):')
+    if str(x) != 'D':
+       lst.append(int(x))
+    else:
+        break
+print(lst)
+xy = 0
+for i in range(len(lst)):
+    xy = lst[i] + xy
+print(xy)
+
