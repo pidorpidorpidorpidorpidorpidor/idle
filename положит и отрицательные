@@ -1,0 +1,16 @@
+lst = []
+while True:
+    x = input('Введите любое число(D - для отмены):')
+    if str(x) != 'D':
+       lst.append(int(x))
+    else:
+        break
+xy = 0
+y = 0
+for i in range(len(lst)):
+    if lst[i] < 0:
+        xy = xy + 1
+    elif lst[i] >= 0:
+        y = y + 1
+print('Положительных:' + str(y))
+print('Отрицательных:' + str(xy))
