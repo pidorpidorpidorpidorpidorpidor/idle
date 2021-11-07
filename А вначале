@@ -1,0 +1,11 @@
+lst = []
+#lst.append()
+while True:
+    x = input('Введите что-нибуь(D - для отмены):')
+    if str(x) != 'D':
+       lst.append(str(x))
+    else:
+        break
+lst.insert(0, 'A')
+for i in range(len(lst)):
+    print(lst[i])
