@@ -1,0 +1,14 @@
+lst = []
+while True:
+    x = input('Введите любое число(D - закончить):')
+    if x != 'D':
+        lst.append(int(x))
+    else:
+        break
+y = 0
+x = 0
+for i in range(len(lst)):
+    y = y + 1
+    x = x + lst[i]
+result =  x / y
+print(str(result))
