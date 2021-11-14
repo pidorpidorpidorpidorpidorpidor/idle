@@ -1,0 +1,24 @@
+lst = [[' ', '1', '2', '3'],
+       ['1', ' ', ' ', ' '],
+       ['2', ' ', ' ', ' '],
+       ['3', ' ', ' ', ' ']]
+while True:
+    for i in range(len(lst)):
+        print(lst[i])
+    x1 = int(input('Игрок 1, ведите координату X:'))
+    y1 = int(input('Игрок 1, ведите координату Y:'))
+    for i in range(len(lst)):
+        for g in range(len(lst)):
+             if lst[y1][x1] == ' ':
+                 lst[y1][x1] = 'X'
+             if lst[1][1] = 'X':
+                 if lst[1][2] == 'X':
+                     if lst[1][3] == 'X':
+    for i in range(len(lst)):
+        print(lst[i])
+    x2 = int(input('Игрок 2, ведите координату X:'))
+    y2 = int(input('Игрок 2, ведите координату Y:'))
+    for i in range(len(lst)):
+        for g in range(len(lst)):
+             if lst[y2][x2] == ' ':
+                 lst[y2][x2] = '0'
