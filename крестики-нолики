@@ -11,9 +11,14 @@ while True:
         for g in range(len(lst)):
              if lst[y1][x1] == ' ':
                  lst[y1][x1] = 'X'
-             if lst[1][1] = 'X':
-                 if lst[1][2] == 'X':
-                     if lst[1][3] == 'X':
+             if lst[y1][1] = 'X':
+                 if lst[y1][2] == 'X':
+                     if lst[y1][3] == 'X':
+                         print('Вы вйграли!')
+            if lst[1][1] = 'X':
+                 if lst[2][2] == 'X':
+                     if lst[3][i] == 'X':
+                         print('Вы вйграли!')
     for i in range(len(lst)):
         print(lst[i])
     x2 = int(input('Игрок 2, ведите координату X:'))
