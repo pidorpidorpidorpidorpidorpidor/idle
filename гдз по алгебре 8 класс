@@ -1,1 +1,2 @@
 
+password = input('Введите пароль:') let = 0 num = 0 sim = 0 def pasA(): global password,let,let p = 0 for i in password: if i >= 'a' and i <= 'z': let = let 1 else: let = let def pasB(): global password,num for i in password: p = 0 if i in '1234567890': num = num 1 else: num = num def pasC(): global password,sim for i in password: p = 0 if i in '!@#$%^&*()_- =.,?/.>,<;:[{]}\|`~': sim = sim 1 e
